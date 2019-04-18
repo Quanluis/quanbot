@@ -1,6 +1,13 @@
-const Discord = require('discord.js'); 
+let Discord = require('discord.js'); 
 
 require('dotenv').config();
+
+const http = require('http');
+const port = process.env.PORT || 3000;
+
+// this is a simple server
+
+http.createServer().listen(port)
 
 const client = new Discord.Client();
 
@@ -24,7 +31,7 @@ client.on('message', message => {
 client.on('message', message => {
     if(message.content === 'ping'){
         message.channel.send('pong')
-    }
+    }  
 
 })
 
