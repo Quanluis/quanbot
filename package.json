@@ -1,0 +1,23 @@
+{
+  "name": "quanbot",
+  "version": "1.0.0",
+  "description": "Bot for a personal Discord Server.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quanluis/quanbot.git"
+  },
+  "author": "Quanluis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quanluis/quanbot/issues"
+  },
+  "homepage": "https://github.com/Quanluis/quanbot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^7.0.0"
+  }
+}
