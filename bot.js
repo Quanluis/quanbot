@@ -8,6 +8,12 @@ client.on('ready', () => {
     console.log('Im ready');
 })
 
+client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find(ch => ch.name === 'member-log');
+    if (!channel) return;
+    channel.send(`Welcome to Quanhub', ${member}`)
+})
+
 client.on('message', message => {
     if (message.content === "role"){
         message.channel.send(Math.floor(Math.random() * 6) + 1);
