@@ -2,6 +2,8 @@ let Discord = require('discord.js');
 
 require('dotenv').config();
 
+const token = process.env.TOKEN;
+
 const http = require('http');
 const port = process.env.PORT || 3000;
 
@@ -35,4 +37,4 @@ client.on('message', message => {
 
 })
 
-client.login(process.env.TOKEN)
+client.login(token);
