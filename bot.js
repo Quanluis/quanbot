@@ -1,20 +1,25 @@
 let Discord = require('discord.js'); 
 
-require('dotenv').config();
+// Hidden token, use Dotenv dependecy to hide your personal token
 
+require('dotenv').config();
 const token = process.env.TOKEN;
+
+// this is a simple server
 
 const http = require('http');
 const port = process.env.PORT || 3000;
 
-// this is a simple server
-
 http.createServer().listen(port)
+
+// end of server
+
+let pan1 = "./memes/meme1.jpg";
 
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log('Im ready');
+    console.log('Im ready')
 })
 
 client.on('guildMemberAdd', member => {
@@ -28,6 +33,13 @@ client.on('message', message => {
         message.channel.send(Math.floor(Math.random() * 6) + 1);
     }
 
+})
+     
+client.on( 'message', message => {
+    if(message.content === "meme"){
+        message.channel.send({files: [pan1]})
+        
+    }
 })
 
 client.on('message', message => {
