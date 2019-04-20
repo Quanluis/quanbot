@@ -15,11 +15,14 @@ http.createServer().listen(port)
 // end of server
 
 let pan1 = "./memes/meme1.jpg";
+let avatar = './memes/quantisha.jpg';
 
 const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('Im ready')
+    
+    client.user.setAvatar(avatar)
 })
 
 client.on('guildMemberAdd', member => {
