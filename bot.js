@@ -17,12 +17,14 @@ http.createServer().listen(port)
 let pan1 = "./memes/meme1.jpg";
 let avatar = './memes/quantisha.jpg';
 
+let crew = ['Jaylen', 'Mario', 'Michael', 'Luis', 'Kirk']
+
 const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('Im ready')
-    
-    client.user.setAvatar(avatar)
+
+
 })
 
 client.on('guildMemberAdd', member => {
@@ -33,7 +35,8 @@ client.on('guildMemberAdd', member => {
 
 client.on('message', message => {
     if (message.content === "role"){
-        message.channel.send(Math.floor(Math.random() * 6) + 1);
+        message.channel.send(Math.floor(Math.random()* 6) + 1)
+        
     }
 
 })
@@ -41,8 +44,20 @@ client.on('message', message => {
 client.on( 'message', message => {
     if(message.content === "meme"){
         message.channel.send({files: [pan1]})
-        
+         
     }
+})
+
+client.on('message', message => {
+    if(message.content === 'who dirty?'){
+        let randomNig = crew[Math.floor(Math.random()* crew.length)]
+        message.channel.send(randomNig)
+    }
+})
+
+client.on ('message', message => {
+    if(message.content === "helllo")
+    message.author.send('hello')
 })
 
 client.on('message', message => {
@@ -51,5 +66,5 @@ client.on('message', message => {
     }  
 
 })
-
+    
 client.login(token);
